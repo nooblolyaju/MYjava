@@ -11,15 +11,25 @@
 
        <button id="button">クリック！</button>
 
+       <button id="reset">リセットしちゃうにょ〜ん</button>
+
 <script>
        let count = 0;
 
        const button = document.getElementById("button")
+
+       const reset = document.getElementById("reset")
+
        const countText = document.getElementById("count")
 
        button.onclick = function() {
                count = count + 1;
                countText.textContent = count;
+};
+
+       reset.onclick = function() {
+               count = 0;
+countText.textcontent = count;
 };
 </script>
 
