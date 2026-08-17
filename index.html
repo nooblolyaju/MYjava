@@ -99,6 +99,7 @@ countText.textContent = count;
        upgrade.onclick = function() {
                if (count >= upgradeCost) {
                    count = count - upgradeCost;
+                   click = click + 1;
                    upgradeCost = upgradeCost + 15;
 
 countText.textContent = count;
