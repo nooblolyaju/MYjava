@@ -67,27 +67,43 @@ gap: 15px;
 </div>
 
 <script>
+
+       let click = 1;
+
        let count = 0;
 
        let upgradeCost = 10;
 
        const button = document.getElementById("button")
 
+       const upgradeCostText = document.getElementById("upgradeCost");
+
+       const upgrade = document.getElementById("upgrade")
+
        const reset = document.getElementById("reset")
 
        const countText = document.getElementById("count")
 
        button.onclick = function() {
-               count = count + 1;
+               count = count + click;
                countText.textContent = count;
 
 };
-
 
        reset.onclick = function() {
                count = 0;
 
 countText.textContent = count;
+};
+
+       upgrade.onclick = function() {
+               if (count >= upgradeCost) {
+                   count = count - upgradeCost;
+                   upgradeCost = upgradeCost + 15;
+
+countText.textContent = count;
+upgradeCostText.textContent = upgradeCost;
+}
 };
 </script>
 
