@@ -1,0 +1,27 @@
+<DOCTYPE html>
+<html>
+<head>
+    <title>カウンター</title>
+</head>
+
+<body>
+       <h1>カウンター</h1>
+
+       <p id="count">0</p>
+
+       <button id="button">くりっく！</button>
+
+<script>
+       let count = 0;
+
+       const button = document.getElementById("button")
+       const countText = document.getElementByid("count")
+
+       button.oneclick = function() {
+               count = count + 1;
+               countText.textContent = count;
+};
+</script>
+
+</body>
+</html>
