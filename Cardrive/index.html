@@ -34,14 +34,33 @@ bottom: 20px;
                    <div id="player"></div>
           </div>
 <script>
-const player = document.getElementById("player")
+const player = document.getElementById("player");
+const road = document.getElementById("road");
 
-document.addEventListener("touchmove",function(event) {
-const x = event.touches[0].clientX;
-console.log(x);
-player.style.left = x + "px"
+document.addEventListener("touchmove", function(event) {
+
+    const x = event.touches[0].clientX;
+
+    const roadRect = road.getBoundingClientRect();
+
+    const roadLeft = roadRect.left;
+    const roadRight = roadRect.left + roadRect.width;
+
+    const playerWidth = player.offsetWidth;
+
+    if (x < roadLeft) {
+        player.style.left = roadLeft + "px";
+    }
+
+    if (x + playerWidth > roadRight) {
+        player.style.left = roadRight - playerWidth + "px";
+    }
+
+    if (x >= roadLeft && x + playerWidth <= roadRight) {
+        player.style.left = x + "px";
+    }
+
 });
-
 </script>
 
 </body>
