@@ -31,6 +31,16 @@ bottom: 20px;
           <div id="road">
                    <div id="player"></div>
           </div>
+<script>
+const player = document.getElementById("player")
+
+document.addEventListener("touchmove",function(event) {
+console.log(event.touches[0].clientX);
+player.style.left = x + "px"
+});
+
+</script>
+
 </body>
 
 </html>
