@@ -48,7 +48,7 @@ gap: 15px;
 
 <div id="up">
 
-       <h1>アップグレードに必要なクリック数〇〇</h1>
+       <h1>アップグレードに必要なクリック数<span id="upgradeCost"></span></h1>
 
        <button id="upgrade">クリック数+1</button>
 
@@ -68,6 +68,8 @@ gap: 15px;
 
 <script>
        let count = 0;
+
+       let upgradeCost= 0;
 
        const button = document.getElementById("button")
 
