@@ -1,113 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>カウンター</title>
-
-       <style>
-
-#up {
-display: flex;
-justify-content: center;
-align-items: center;
-gap: 20px;
-}
-
-#count {
-font-size: 60px;
-}
-
-button {
-border-radius: 10px;
-font-size: 20px;
-padding: 10px 20px;
-border: none;
-background-color: red;
-color: white;
-transition: 0.1s;
-}
-
-button:active {
-transform: scale(0.85);
-opacity: 0.7;
-}
-
-body {
-background-color: white;
-min-height: 100vh;
-display: flex;
-justify-content: center;
-align-items: center;
-flex-direction: column;
-gap: 15px;
-}
-
-       </style>
-
+    <title>ゲーム一覧</title>
 </head>
 
 <body>
 
-<div id="up">
+    <h1>ゲームを選択</h1>
 
-       <h1>アップグレードに必要なクリック数<span id="upgradeCost">10</span></h1>
+    <button id="clickGame">Click Game</button>
 
-       <button id="upgrade">クリック数+1</button>
+    <script>
+        const clickGame = document.getElementById("clickGame");
 
-</div>
-
-<div id="card">
-
-       <h1>カウンター</h1>
-
-       <p id="count">0</p>
-
-       <button id="button">クリック！</button>
-
-       <button id="reset">リセットしちゃうにょ〜ん</button>
-
-</div>
-
-<script>
-
-       let click = 1;
-
-       let count = 0;
-
-       let upgradeCost = 10;
-
-       const button = document.getElementById("button")
-
-       const upgradeCostText = document.getElementById("upgradeCost")
-
-       const upgrade = document.getElementById("upgrade")
-
-       const reset = document.getElementById("reset")
-
-       const countText = document.getElementById("count")
-
-       button.onclick = function() {
-               count = count + click;
-               countText.textContent = count;
-
-};
-
-       reset.onclick = function() {
-               count = 0;
-
-countText.textContent = count;
-};
-
-       upgrade.onclick = function() {
-               if (count >= upgradeCost) {
-                   count = count - upgradeCost;
-                   click = click + 1;
-                   upgradeCost = upgradeCost + 15;
-
-countText.textContent = count;
-upgradeCostText.textContent = upgradeCost;
-}
-};
-</script>
+        clickGame.onclick = function() {
+            location.href = "/clickgame/";
+        };
+    </script>
 
 </body>
 </html>
